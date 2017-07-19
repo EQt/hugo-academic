@@ -1,7 +1,6 @@
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
   <div class="container">
-
-    <!-- Brand and toggle get grouped for better mobile display -->
+    {{/* Brand and toggle get grouped for better mobile display */}}
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
               data-target=".navbar-collapse" aria-expanded="false">
@@ -12,14 +11,11 @@
       </button>
       <a class="navbar-brand" href="{{ "/" | relLangURL }}">{{ .Site.Title }}</a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    {{/*<!-- Collect the nav links, forms, and other content for toggling -->*/}}
     <div class="collapse navbar-collapse">
-
-      <!-- Left Nav Bar -->
+      {{/*<!-- Left Nav Bar -->*/}}
       <ul class="nav navbar-nav navbar-right">
         {{ range .Site.Menus.main }}
-
         {{ if .HasChildren }}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
@@ -37,19 +33,15 @@
             {{ end }}
           </ul>
         </li>
-
         {{ else }}
-
         <li class="nav-item">
           <a href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
             {{ .Pre }}
             <span>{{ .Name }}</span>
           </a>
         </li>
-
         {{ end }}
         {{ end }}
-
         {{ if .IsTranslated }}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
@@ -68,7 +60,6 @@
         </li>
         {{ end }}
       </ul>
-
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
 </nav>
